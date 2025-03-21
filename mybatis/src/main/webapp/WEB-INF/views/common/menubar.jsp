@@ -25,6 +25,10 @@
 		width: 1%;
 		height: 50px;
 		vertical-align: middle;
+		cursor: pointer;
+	}
+		.outer {
+		text-align: center;
 	}
 </style>
 </head>
@@ -48,7 +52,7 @@
 				</tr>
 				<tr>
 					<td colspan="3" align="center">
-						<a href="">회원가입</a>
+						<a href="enrollForm.me">회원가입</a>
 						<a href="">아이디/비밀번호 찾기</a>
 					</td>
 				</tr>
@@ -73,7 +77,7 @@
 	<div class="nav-area" align="center">
 		<div class="menu">HOME</div>
 		<div class="menu">공지사항</div>
-		<div class="menu" onclick="" >게시판</div>
+		<div class="menu" onclick="location.href='list.bo?nowPage=1'" >게시판</div>
 		<div class="menu">ETC</div>
 	</div>
 </body>

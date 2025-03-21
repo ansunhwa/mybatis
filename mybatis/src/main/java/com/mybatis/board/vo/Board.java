@@ -9,13 +9,13 @@ public class Board {
 	private String boardContent;
 	private String boardWriter; 
 	private int count; 
-	private Date create_date; 
+	private Date createDate; 
     private String status;
     
 	public Board() {
 	}
 
-	public Board(int boardNo, String boardTitle, String boardContent, String boardWriter, int count, Date create_date,
+	public Board(int boardNo, String boardTitle, String boardContent, String boardWriter, int count, Date createDate,
 			String status) {
 		super();
 		this.boardNo = boardNo;
@@ -23,7 +23,7 @@ public class Board {
 		this.boardContent = boardContent;
 		this.boardWriter = boardWriter;
 		this.count = count;
-		this.create_date = create_date;
+		this.createDate = createDate;
 		this.status = status;
 	}
 
@@ -67,12 +67,12 @@ public class Board {
 		this.count = count;
 	}
 
-	public Date getCreate_date() {
-		return create_date;
+	public Date getCreateDate() {
+		return createDate;
 	}
 
-	public void setCreate_date(Date create_date) {
-		this.create_date = create_date;
+	public void setCreateDate(Date createDate) {
+		this.createDate = createDate;
 	}
 
 	public String getStatus() {
@@ -86,10 +86,11 @@ public class Board {
 	@Override
 	public String toString() {
 		return "Board [boardNo=" + boardNo + ", boardTitle=" + boardTitle + ", boardContent=" + boardContent
-				+ ", boardWriter=" + boardWriter + ", count=" + count + ", create_date=" + create_date + ", status="
+				+ ", boardWriter=" + boardWriter + ", count=" + count + ", createDate=" + createDate + ", status="
 				+ status + "]";
 	}
-    
+
+
     
 
 }
