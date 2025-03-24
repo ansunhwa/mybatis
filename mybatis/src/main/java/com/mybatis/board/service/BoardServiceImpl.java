@@ -1,6 +1,7 @@
 package com.mybatis.board.service;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import org.apache.ibatis.session.SqlSession;
 
@@ -32,20 +33,55 @@ public class BoardServiceImpl implements BoardService {
 	@Override
 	public int increaseCount(int boardNo) {
 		SqlSession sqlSession = template.getSqlSession();
-		int count = bDao.totalCount(sqlSession);
-		return 0;
+		int result = bDao.increaseCount(sqlSession, boardNo);
+		if(result > 0) {
+			sqlSession.commit();			
+		}
+		sqlSession.close();
+		return result;
 	}
 
 	@Override
 	public Board selectBoard(int boardNo) {
-		// TODO Auto-generated method stub
-		return null;
+		SqlSession sqlSession = template.getSqlSession();
+		Board b = bDao.selectBoard(sqlSession, boardNo);
+		sqlSession.close();
+		return b;
 	}
 
 	@Override
 	public ArrayList<Reply> selectReplyList(int boardNo) {
-		// TODO Auto-generated method stub
-		return null;
+		SqlSession sqlSession = template.getSqlSession();
+		ArrayList<Reply> list = bDao.selectReplyList(sqlSession, boardNo);
+		sqlSession.close();
+		return list;
+	}
+
+	@Override
+	public int selectSearchCount(HashMap<String, String> map) {
+		SqlSession sqlSession = template.getSqlSession();
+		int result = bDao.selectSearchCount(sqlSession, map);
+		sqlSession.close();
+		return result;
+	}
+
+	@Override
+	public ArrayList<Board> selectSearchList(HashMap<String, String> map, PageInfo pi) {
+		SqlSession sqlSession = template.getSqlSession();
+		ArrayList<Board> list = bDao.selectSearchList(sqlSession, map, pi);
+		sqlSession.close();
+		return list;
+	}
+
+	@Override
+	public int replyInsert(Reply r) {
+		SqlSession sqlSession = template.getSqlSession();
+		int result = bDao.replyInsert(sqlSession, r);
+		if(result > 0) {
+			sqlSession.commit();
+		}
+		sqlSession.close();
+		return result;
 	}
 
 }

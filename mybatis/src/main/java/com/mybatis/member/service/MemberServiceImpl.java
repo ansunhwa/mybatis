@@ -32,7 +32,7 @@ public class MemberServiceImpl implements MemberService {
 		SqlSession sqlSession = template.getSqlSession();
 		int result = mDao.insertMember(sqlSession, m);
 		
-		if(result >0) {
+		if(result >0) {  //수동으로commit
 			sqlSession.commit();
 		}
 		sqlSession.close();

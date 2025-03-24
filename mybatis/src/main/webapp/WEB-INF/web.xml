@@ -79,4 +79,24 @@
     <servlet-name>BoardDetailServlet</servlet-name>
     <url-pattern>/detail.bo</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>BoardSerchServlet</display-name>
+    <servlet-name>BoardSerchServlet</servlet-name>
+    <servlet-class>com.mybatis.board.controller.BoardSerchServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BoardSerchServlet</servlet-name>
+    <url-pattern>/search.bo</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ReplyInsertServlet</display-name>
+    <servlet-name>ReplyInsertServlet</servlet-name>
+    <servlet-class>com.mybatis.board.controller.ReplyInsertServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ReplyInsertServlet</servlet-name>
+    <url-pattern>/rinsert.bo</url-pattern>
+  </servlet-mapping>
 </web-app>
