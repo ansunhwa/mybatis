@@ -47,10 +47,12 @@ public class BoardDetailServlet extends HttpServlet {
 		ArrayList<Reply> reply = bService.selectReplyList(boardNo);
 		
 		response.setContentType("application/json");
-		Gson gson = new Gson();
-		String json = gson.toJson(gson);
-		response.getWriter().print(json);
+		response.getWriter().print(new Gson().toJson(reply));
 		
+		/*
+		 * Gson gson = new Gson(); String json = gson.toJson(gson);
+		 * response.getWriter().print(json);
+		 */
 		
 		//response.getWriter().print(new Gson().toJson(reply));
 					

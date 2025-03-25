@@ -91,7 +91,7 @@
 	</select>
 	
 	<insert id="replyInsert">
-		insert into reply values(seq_bno.nextval, #{replyContent}, #{refBno}, #{replyWriter}, default, default )
+		insert into reply values(seq_rno.nextval, #{replyContent}, #{refBno}, #{replyWriter}, default, default)
 	</insert>
 	
 	

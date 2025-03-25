@@ -53,15 +53,15 @@
 		<table align="center">
 		<c:choose>
 			<c:when test="${loginUser != null }" >	
-			<form id="rFrm">
-			<tr>
-				<th>댓글작성</th>
-				<th><textarea rows="3" cols="51" name="content"></textarea></th>
-				<th><input type="button" value="댓글등록" id="replyInsert"></th>
-				<input type="hidden" name="bno" value="${b.boardNo}">	
-				<input type="hidden" name="writer" value="${loginUser.userId}">		
-			</tr>
-			</form>
+				<form id="rFrm">
+					<tr>
+						<th>댓글작성</th>
+						<th><textarea rows="3" cols="51" name="content"></textarea></th>
+						<th><input type="button" value="댓글등록" id="replyInsert"></th>
+						<input type="hidden" name="bno" value="${b.boardNo}">	
+						<input type="hidden" name="writer" value="${loginUser.userId}">		
+					</tr>
+				</form>
 			</c:when>
 				<c:otherwise>
 				<tr>
@@ -89,12 +89,12 @@
 	
 	<script>
 		$(() => {
-			$('replyInsert').click(function(){
+			$('#replyInsert').click(function(){
 				// serialize() : 폼 안의 input, select, textarea등의 value의 값을 간단하게 표준 url인코딩 형태 문자열로 만들어 줌
 				// content=내용&id=값&writer=값
 				let rdata = $('#rFrm').serialize();
 				$.ajax({
-					url:'rinsert.bo',
+					url: 'rinsert.bo',
 					data: rdata,
 					success: function(result) {
 						console.log(result);
@@ -115,6 +115,7 @@
 					type : "post",
 					success : function(result) {
 						console.log(result);
+						let list = "";
 						$.each(result, function(index, value){
 							list += "<tr>"
 								+ "<td>" + value.replyWriter + "</td>"
